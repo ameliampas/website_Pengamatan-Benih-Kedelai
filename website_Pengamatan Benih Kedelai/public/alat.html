@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alat</title>
+    <!-- Favicons -->
+    <link href="assets/img/logo.webp" rel="icon">
+    <link href="assets/img/logo.webp" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets\css\main.css" rel="stylesheet">   
+
+</head>
+<body>
+  <!-- ======= Nav Bar ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+    <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.webp" alt="">
+    </a>
+
+    <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li class="active"><a href="alat.html">Alat</a></li>
+          <li><a href="album.html">Album</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav><!-- .navbar -->
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header>
+  <!-- End Nav Bar --> 
+
+  <!-- ======= Alat ======= -->
+  <section id="alat_benih" class="alat_benih">
+    <div class="container" data-oas="fade-up">
+      <div class="section-header">
+          <h2>Alat</h2>
+          <p>Tentang <span>Alat Kami</span></p>
+      </div>
+      <img src="assets/img/alat.webp" class="img-fluid rounded" alt="" data-aos="fade-up" data-aos-delay="300" style="display: block;max-height: 400px; margin-left: auto; margin-right: auto;">
+      <p class="text-center">Gambar Alat yang berada di BPSB Jawa Barat</p>
+      <p style="text-align: justify;text-indent: 50px"> Alat yang berada di BPSB Jawa Barat adalah germinator dengan sensor-sensor untuk menjaga lingkungan pembenihan. 
+        Sensor YL-90 adalah sensor untuk mengukur kelembaban media. Sensor ini diatur pada kelembaban 60%, sehingga saat kelembaban dibawah 60% maka sprinkler akan otomatis mengeluarkan air.
+        Sensor GY-30 adalah sensor untuk mengukur intensitas cahaya. Sensor ini diatur pada intensitas 750lux, sehingga saat intensitas dibawah 750lx maka lampu akan otomatis.
+        Sensor DHT-11 adalah sensor untuk mengukur suhu. Sensor ini diatur pada suhu 24-26°C, sehingga saat suhu berada dibawah 23°C maka heater akan otomatis menyala dan saat suhu berada diatas 25°C maka kipas akan otomatis menyala.
+        Kamera ESP32 yang dipasang diatas germinator akan menangkap gambar sekali tiap hari.
+      </p>
+      <div class="row">
+        <figure class="col-lg-3" style="text-align: center;">
+          <img src="assets/img/sensor_kelembaban.webp" class="img-fluid rounded" style="max-height: 150px; max-width: 150px; margin: auto;object-fit:cover;">
+          <figcaption style="font-size: smaller;">Sensor Kelembaban Media</figcaption>
+        </figure>
+        <figure class="col-lg-3" style="text-align: center; vertical-align:text-bottom;">
+          <img src="assets/img/sensor_cahaya.webp" class="img-fluid rounded" style="max-height: 150px; max-width: 150px; margin: auto;object-fit:cover;">
+          <figcaption style="font-size: smaller;">Sensor Intensitas Cahaya</figcaption>
+        </figure>
+        <figure class="col-lg-3" style="text-align: center;">
+          <img src="assets/img/sensor_suhu.webp" class="img-fluid rounded" style="max-height: 150px; max-width: 150px; margin: auto;object-fit:cover;">
+          <figcaption style="font-size: smaller;">Sensor Suhu</figcaption>
+        </figure>
+        <figure class="col-lg-3" style="text-align: center;">
+          <img src="assets/img/kamera.webp" class="img-fluid rounded" style="max-height: 150px; max-width: 150px; margin: auto;object-fit:cover;">
+          <figcaption style="font-size: smaller;">Kamera</figcaption>
+        </figure>
+      </div>
+      <div class="row">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <div class="col-lg-4">
+            <h5 class="card-title" style="text-align: center;">Suhu</h5>
+            <canvas id="chart_suhu" style=" background-color:white; " ></canvas> 
+          </div>
+          <div class="col-lg-4">
+            <h5 class="card-title" style="text-align: center;">Intensitas Cahaya</h5>
+            <canvas id="chart_cahaya" style="background-color:white;"></canvas> 
+          </div>
+          <div class="col-lg-4">
+            <h5 class="card-title" style="text-align: center;">Kondisi Cahaya</h5>
+            <canvas id="chart_kondisicahaya" style="background-color:white;"></canvas>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="card-title" style="text-align: center;">Kelembaban Media</h5>
+            <canvas id="chart_tanah" style="background-color:white;"></canvas>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="card-title" style="text-align: center;">Kondisi Media</h5>
+            <canvas id="chart_kondisitanah" style=" background-color:white;"></canvas> 
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- End Alat -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h4>Alamat</h4>
+            <p>
+              Jl. Ciganitri II No.18, Kec Bojongsoang, Kabupaten Bandung, Jawa Barat<br>
+              40287<br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Hubungi</h4>
+            <p>
+              <strong>Phone:</strong> (022) 7566552<br>
+              <strong>Email:</strong> bpsbtph.provjabar@gmail.com<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Jam Kerja</h4>
+            <p>
+              <strong>Senin-Jumat:</strong> 07.30 - 16.00WIB<br>
+              Sabtu dan Minggu : Tutup
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+              <a newTab href="https://twitter.com/bpsbjabar" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.instagram.com/bpsbjabar/" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.youtube.com/c/bpsbtphjabar" class="youtube"><i class="bi bi-youtube"></i></a>
+          </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/chart.js"></script>
+  <script src="assets/js/main.js"></script>   
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+    <!-- Favicons -->
+    <link href="assets/img/logo.webp" rel="icon">
+    <link href="assets/img/logo.webp" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets\css\main.css" rel="stylesheet">   
+
+</head>
+<body>
+  <!-- ======= Nav Bar ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+          <img src="assets/img/logo.webp" alt="">
+      </a>
+
+      <nav id="navbar" class="navbar">
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="alat.html">Alat</a></li>
+            <li class="active"><a href="album.html">Album</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+      </nav><!-- .navbar -->
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+      </div>
+  </header>
+  <!-- End Nav Bar --> 
+
+  <!-- ======= Album Section ======= -->
+  <section id="album" class="album">
+    <div class="container" data-oas="fade-up">
+        <div class="section-header">
+            <h2>Album</h2>
+            <p>Lihat Perkembangan <span>Benih Kedelai</span></p>
+        </div>
+        <div class="row" id="album_gambar">
+        </div>
+        <div id="popUp" class="popUp">
+          <p id="btnclose">&times</p>
+          <img id="popUp-img" class="popUp-content">
+        </div>
+    </div>
+  </section>
+  <!-- ======= End Album Section ======= -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h4>Alamat</h4>
+            <p>
+              Jl. Ciganitri II No.18, Kec Bojongsoang, Kabupaten Bandung, Jawa Barat<br>
+              40287<br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Hubungi</h4>
+            <p>
+              <strong>Phone:</strong> (022) 7566552<br>
+              <strong>Email:</strong> bpsbtph.provjabar@gmail.com<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Jam Kerja</h4>
+            <p>
+              <strong>Senin-Jumat:</strong> 07.30 - 16.00WIB<br>
+              Sabtu dan Minggu : Tutup
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+              <a newTab href="https://twitter.com/bpsbjabar" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.instagram.com/bpsbjabar/" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.youtube.com/c/bpsbtphjabar" class="youtube"><i class="bi bi-youtube"></i></a>
+          </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  <script>
+    var tutup = document.getElementById("btnclose");
+    tutup.onclick = function() { 
+      popUp.style.display = "none";
+    }
+  </script>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/album.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

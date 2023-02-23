@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihat Benih</title>
+    <!-- Favicons -->
+    <link href="assets/img/logo.webp" rel="icon">
+    <link href="assets/img/logo.webp" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets\css\main.css" rel="stylesheet">   
+
+</head>
+<body>
+  <!-- ======= Nav Bar ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/logo.webp" alt="">
+      </a>
+
+      <nav id="navbar" class="navbar">
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="alat.html">Alat</a></li>
+            <li><a href="album.html">Album</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+      </nav><!-- .navbar -->
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+      </div>
+  </header>
+  <!-- End Nav Bar --> 
+
+  <!-- ======= Lihat Benih ======= -->
+  <section id="lihatbenih" class="lihatbenih section-bg">
+      <div class="container" data-oas="fade-up">
+          <div class="section-header">
+              <h2>Benih Hari Ini</h2>
+              <p>Lihat Benih <span>Hari Ini</span></p>
+          </div>
+          <div class="row gy-4">
+            <div class="col-lg-7 position-relative">
+              <img  id="id_hasil_benih"class="img-fluid rounded" alt="" data-aos="fade-up" data-aos-delay="300" style="max-height:480px;width: 100%;object-fit:cover;">
+            </div>
+            <div class="col-lg-5 d-flex align-items-lg-start " data-aos="fade-up" data-aos-delay="300">
+              <div>
+                <h5>
+                  Benih hari ini <span id="tanggalwaktu"></span>
+                </h5>
+                <div id="hasil_suhu"></div>
+                <div id="hasil_intensitas" ></div>
+                <div id="hasil_kondisicahaya" ></div>
+                <div id="hasil_kelembaban"></div>
+                <div id="hasil_kondisimedia" ></div>
+                <br><br>
+                <p style="font-size: smaller;">
+                Nilai Acuan Lingkungan Pembenihan :<br>
+                Suhu : 24-26°C <br>
+                Intensitas Cahaya : ≥750lux <br>
+                Kelembaban Media  : ≥60% <br>
+                </p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+  </section>
+  <!-- End Lihat Benih -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h4>Alamat</h4>
+            <p>
+              Jl. Ciganitri II No.18, Kec Bojongsoang, Kabupaten Bandung, Jawa Barat<br>
+              40287<br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Hubungi</h4>
+            <p>
+              <strong>Phone:</strong> (022) 7566552<br>
+              <strong>Email:</strong> bpsbtph.provjabar@gmail.com<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Jam Kerja</h4>
+            <p>
+              <strong>Senin-Jumat:</strong> 07.30 - 16.00WIB<br>
+              Sabtu dan Minggu : Tutup
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+              <a newTab href="https://twitter.com/bpsbjabar" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.instagram.com/bpsbjabar/" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.youtube.com/c/bpsbtphjabar" class="youtube"><i class="bi bi-youtube"></i></a>
+          </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+  <!-- Tanggal waktu -->
+  <script>
+    var tw = new Date();
+    if (tw.getTimezoneOffset() == 0) (a=tw.getTime() + ( 7 *60*60*1000))
+    else (a=tw.getTime());
+    tw.setTime(a);
+    var tw = new Date();
+    var tahun= tw.getFullYear ();
+    var hari= tw.getDay ();
+    var bulan= tw.getMonth ();
+    var tanggal= tw.getDate ();
+    var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+    var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
+    document.getElementById("tanggalwaktu").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun+" "+((tw.getHours() < 10) ? "0" : "") + tw.getHours() + ":" + ((tw.getMinutes() < 10)? "0" : "") + tw.getMinutes();
+    </script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  
+  <!-- Template Main JS File -->
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/harian.js"></script>
+  <script src="assets/js/main.js"></script>   
+
+ 
+</body>
+</html>
